@@ -1,18 +1,17 @@
 package com.practice.dddExp.domain.model;
 
+import com.practice.dddExp.domain.id.OrderItemId;
 import com.practice.dddExp.domain.vo.OrderItemSpec;
-
-import java.util.UUID;
 
 public class OrderItem {
 
-    private String code;
+    private OrderItemId id;
     private OrderItemSpec spec;
 
 
-    public OrderItem(OrderItemSpec spec) {
+    public OrderItem(OrderItemId id, OrderItemSpec spec) {
         validation(spec);
-        this.code = UUID.randomUUID().toString();
+        this.id = id;
         this.spec = spec;
     }
 
@@ -26,9 +25,10 @@ public class OrderItem {
         if(name == null || name.isEmpty()) throw new IllegalArgumentException("이름을 반드시 정해야 합니다.");
     }
 
-    public String getCode() {
-        return code;
+    public OrderItemId getId() {
+        return id;
     }
+
 
     public OrderItemSpec getSpec() {
         return spec;
