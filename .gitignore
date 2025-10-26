@@ -7,7 +7,7 @@ build/
 
 
 ### settings ###
-
+application.yml
 
 ### STS ###
 .apt_generated
